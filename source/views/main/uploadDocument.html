@@ -1,0 +1,23 @@
+<div ng-controller="uploadDocumentController">
+  <h3>Uploading document</h3>
+
+  <!--POSTMAN file param:
+  Content-Disposition: form-data; name="dicom_file"; filename="ctimage.dcm"-->
+
+  <!--form action="/v1.0/DICOMEnvelope/upload" enctype="multipart/form-data" method="post">
+		<input type="text" name="title">
+		<br>
+		<input ng-model="tolik" type="file" name="dicom_file" multiple="multiple">
+		<br>
+		<input type="submit" value="Upload">
+  </form-->
+
+  <input type="file" name="dicom_file" multiple="multiple" alt-file-model="myFile">
+
+  <br>
+  <button class="btn btn-primary" ng-click="upload()">Upload Document</button>
+
+  <br>
+  {{myFile.name}}
+
+</div>

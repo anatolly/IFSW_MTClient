@@ -1,0 +1,49 @@
+<div>
+<h3>Available Services</h3>
+
+<div class="row">
+ <div class="col-lg-6 col-md-6">
+  <h4>Search:</h4>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Any:</span>
+    <input class="form-control" aria-describedby="basic-addon1" ng-model="searchVar.data.$">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon2">Name only:</span>
+    <input class="form-control" aria-describedby="basic-addon1" ng-model="searchVar.data.name"><br>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon3">Description only</span>
+    <input class="form-control" aria-describedby="basic-addon1" ng-model="searchVar.data.description"><br>
+  </div>
+ </div>
+</div>
+
+<div class="row">
+ <br>
+</div>
+
+<div class="row">
+ <div class="col-lg-12 col-md-12">
+  <h4>Services:</h4>
+                  <table alttable='{
+                      "name": "servicesTbl",
+                      "data": "serviceTemplates",
+                      "selectMode": "single",
+                      "class": "table alttable alttable-striped"}'
+                      style=" height: 350px;">
+                    <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr alttable-table="servicesTbl" alttable-row="row" ng-repeat="row in servicesTbl.rows | filter:searchVar">
+                      <td>{{row.data.name}}</td>
+                      <td>{{row.data.description}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+ </div>
+</div>

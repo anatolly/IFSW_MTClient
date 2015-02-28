@@ -1,0 +1,79 @@
+  .alttable.table{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 300px; /* this can vary */
+  }
+
+  .alttable table * {
+    box-sizing: inherit;
+    -moz-box-sizing: inherit;
+  }
+
+  .alttable thead {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .alttable tbody {
+    width: 100%;
+    overflow-y: scroll;
+    display: inline-block;
+  }
+
+  .alttable thead > tr, .alttable tbody > tr, .alttable tfoot > tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .alttable thead > tr {
+    margin: 0 17px 0 0; /* to margin width of scroll-control in tbody */
+  }
+
+  .alttable thead, .alttable tfoot {
+    flex-shrink: 0;
+  }
+
+  .alttable thead th, .alttable tbody td {
+    width: 100%; /* this can vary */
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+
+  .alttable tfoot {
+    display: inline-block;
+  }
+
+  .alttable tfoot td {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .alttable-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #fafafa;
+  }
+
+  .alttable-striped > tbody > tr.alttable-selected-row,
+  .alttable-selected-row {
+    background-color: #539AD7; !important;
+  }
+
+
+
+
+
+
+  .form-control2{
+    height: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .alttable-hide {
+    display: none; !important;
+  }

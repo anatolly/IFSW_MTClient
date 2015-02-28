@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="BMSClient" class="no-js">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <title>INTRAFAB Semantic Warehouse</title>
+
+    <style>
+        .appLoading {
+            color: #808080;
+            position: absolute;
+            display: block;
+            width: 100%;
+            top:30%;
+            margin: 0;
+            padding: 0;
+            text-align:center;
+            font-family: 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
+            font-size: 20px;
+            font-weight: 100;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+        .appLoadingTitle {
+            color: #606060;
+            font-size: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div ng-controller="rootController">
+        <div ng-bind-html="UI.serverConnectionStatus" ng-if="!UI.activeAppView.url" class="appLoading if-animate-fade2">
+            <br/><br/><h1 class="appLoadingTitle">INTRAFAB Semantic Warehouse</h1>
+            Загрузка приложения...
+        </div>
+        <div ng-include="UI.activeAppView.url" class="show-animate-fade2" ng-show="UI.activeAppView.show"></div>
+    </div>
+
+    <link href="./externals/bootstrap.min.css" rel="stylesheet">
+    <link href="./externals/font-awesome.min.css" rel="stylesheet">
+    <!--link href="externals/metisMenu.min.css" rel="stylesheet"-->
+
+    <!--link href="externals/sbadmin.css" rel="stylesheet"-->
+    <link href="./styles/animations.css" rel="stylesheet">
+
+    <!--link href="source/views/main/altTable.css" rel="stylesheet"-->
+    <!--link href="styles/base.css" rel="stylesheet"-->
+    <!--link href="app.css" rel="stylesheet"-->
+
+    <script src="./externals/jquery.min.js"></script> <!-- for Modal window - can be removed later -->
+    <script src="./externals/bootstrap.min.js"></script> <!-- for Modal window - can be removed later -->
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="./bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="./bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+
+    <script src="./source/BMSClient.js"></script>
+    <script src="./source/settings.js"></script>
+    <script src="./source/application/app.js"></script>
+    <script src="./source/application/locales.js"></script>
+    <script src="./source/application/locales/ru.js"></script>
+    <script src="./source/application/serverRemoteMethods.js"></script>
+    <script src="./source/application/serverRestURLs.js"></script>
+    <script src="./source/filters/printfFilter.js"></script>
+    <script src="./source/controllers/rootController.js"></script>
+    <script src="./source/views/welcome/welcomeController.js"></script>
+    <script src="./source/views/main/mainController.js"></script>
+    <script src="./source/views/main/myTabsModule.js"></script>
+    <script src="./source/views/main/altTable.js"></script>
+    <script src="./source/models/baseModels.js"></script>
+    <script src="./source/views/main/uploadDocumentController.js"></script>
+</body>
+</html>

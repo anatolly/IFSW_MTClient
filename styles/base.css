@@ -1,0 +1,8 @@
+.modal-hide {
+  display: none;
+}
+
+.modal-show {
+  display: block;
+  padding-right: 17px;
+}

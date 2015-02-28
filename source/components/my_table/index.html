@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="BMSClient" class="no-js">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <title>MyTable</title>
+</head>
+
+<body>
+
+<div ng-controller="welcomeController">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="page-header">
+          Пробуем smart-table
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="login-panel panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Панель</h3>
+          </div>
+          <div class="panel-body">
+            <form role="form">
+              <fieldset>
+                <div class="form-group">
+                  <!--input class="form-control" placeholder="{{app.locale.welcome.email}}" name="email" type="email"-->
+
+
+                  <!--table st-table="displayed" class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th st-ratio="20" st-sort="firstName">first name</th>
+                      <th st-ratio="20" st-sort="lastName">last name</th>
+                      <th st-ratio="10" st-sort="age">age</th>
+                      <th st-ratio="30" st-sort="email">email</th>
+                      <th st-ratio="20" st-sort="balance">balance</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="st-selected-{{row.selected2}}" ng-click="func(row)" ng-repeat="row in displayed">
+                      <td st-ratio="20" ng-click="func2(row)">
+                        <input id="myRow{{::row.Id}}" ng-show="row.inEdit" class="form-control" ng-model="row.firstName">
+                        <span ng-show="!row.inEdit">{{row.firstName}}</span>
+                      </td>
+                      <td st-ratio="20">{{row.lastName | uppercase}}</td>
+                      <td st-ratio="10">{{row.age}}</td>
+                      <td st-ratio="30">{{row.email}}</td>
+                      <td st-ratio="20">{{row.balance | currency}}</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                      <td colspan="5" class="text-center">
+                        <div st-items-by-page="20" st-pagination=""></div>
+                      </td>
+                    </tr>
+                    </tfoot>
+                  </table-->
+
+
+                  <div>
+
+                  <!--div ng-init='editBoxHide2=false'>{{editBoxHide2}}<input id='editBox' ng-model='editBoxHide2' ng-blur='editBoxHide3=true;'><br><div ng-show='!editBoxHide2'><input id='editBox' class='form-control' outside-click='alert(1);editBoxHide2=true;'></div></div-->
+
+                  <table alttable='{
+                      "name": "myTbl",
+                      "data": "myData",
+                      "selectMode": "single",
+                      "class": "table alttable alttable-striped"}'>
+                    <thead>
+                    <tr>
+                      <th>first name</th>
+                      <th>last name</th>
+                      <th>age</th>
+                      <th>email</th>
+                      <th>balance</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr alttable-table="myTbl" alttable-row="row" ng-repeat="row in myTbl.rows">
+                      <td alttable-table="myTbl" alttable-row-id="row.id" alttable-field="firstName">{{row.data.firstName}}</td>
+                      <td>{{row.data.lastName | uppercase}}</td>
+                      <td>{{row.data.age}}</td>
+                      <td alttable-table="myTbl" alttable-row-id="row.id" alttable-field="email">{{row.data.email}}</td>
+                      <td>{{row.data.balance | currency}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  {{myTbl.selection.data.email}}
+                  </div>
+
+
+                </div>
+                <div class="form-group">
+                  <input id="passwordInputId" class="form-control" placeholder="Пароль" name="password" type="password" value="">
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input name="remember" type="checkbox" value="RememberMe" checked>
+                    <span>Запомнить меня</span>
+                  </label>
+                </div>
+                <!-- Change this to a button or input when using this as a form -->
+                <a href="index.html" class="btn btn-lg btn-success btn-block">Войти</a>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    <link href="../../../externals/bootstrap.min.css" rel="stylesheet">
+    <link href="alttable.css" rel="stylesheet">
+    <link href="BMSClient.css" rel="stylesheet">
+
+    <script src="../../../bower_components/angular/angular.js"></script>
+    <script src="../../../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <script src="BMSClient.js"></script>
+    <script src="myTable.js"></script>
+    <script src="welcomeController.js"></script>
+</body>
+</html>

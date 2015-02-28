@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="MyTabsProbeApp" class="no-js">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <title>MyTabsProbe</title>
+</head>
+
+<body>
+
+<div ng-controller="mainTabsController">
+
+ <div style="float:left">
+ <my-tabs>
+  <my-pane title="Hello">
+    <h4>Hello</h4>
+    <p>Lorem ipsum dolor sit amet</p>
+  </my-pane>
+  <my-pane title="World">
+    <h4>World</h4>
+    <em>Mauris elementum elementum enim at suscipit.</em>
+    <p><a href ng-click="i = i + 1">counter: {{i || 0}}</a></p>
+  </my-pane>
+ </my-tabs>
+ </div>
+
+ <div style="float:clear">
+  <my-template-dir>displayed while loading</my-template-dir>
+ </div>
+
+ <div style="float:clear">
+  <div ng-include="myTemplateURL">
+ </div>
+
+</div>
+
+    <script src="../../../bower_components/angular/angular.js"></script>
+    <script src="../../../bower_components/angular-sanitize/angular-sanitize.js"></script>
+
+    <script src="myTabsProbeApp.js"></script>
+    <script src="myTabsModule.js"></script>
+</body>
+</html>

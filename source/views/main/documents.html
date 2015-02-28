@@ -1,0 +1,28 @@
+<div>
+<h3>Cloud Storage Uploaded Files</h3>
+                  <table alttable='{
+                      "name": "documentsTbl",
+                      "data": "documents",
+                      "selectMode": "single",
+                      "class": "table alttable alttable-striped"}'
+                      style=" height: 300px;">
+                    <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Patient</th>
+                      <th>Study</th>
+                      <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr alttable-table="documentsTbl" alttable-row="row" ng-repeat="row in documentsTbl.rows">
+                      <td>Document</td>
+                      <td>DICOM</td>
+                      <td>{{row.data.PatientID}}</td>
+                      <td>{{row.data.StudyDescription}}</td>
+                      <td>{{row.data.createdAt}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+</div>

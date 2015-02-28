@@ -1,0 +1,48 @@
+<div>
+<h3>Requests</h3>
+                  <table alttable='{
+                      "name": "requestsTbl",
+                      "data": "requests",
+                      "selectMode": "single",
+                      "onSelect": "onRequestSelect",
+                      "class": "table alttable alttable-striped"}'
+                      style=" height: 150px;">
+                    <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr alttable-table="requestsTbl" alttable-row="row" ng-repeat="row in requestsTbl.rows">
+                      <td>{{row.data.name}}</td>
+                      <td>{{row.data.createdAt}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+</div>
+
+<div>
+<h3>Requested Services</h3>
+                  <table alttable='{
+                      "name": "requestedServicesTbl",
+                      "data": "requestedServices",
+                      "selectMode": "single",
+                      "class": "table alttable alttable-striped"}'
+                      style=" height: 200px;">
+                    <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr alttable-table="requestedServicesTbl" alttable-row="row" ng-repeat="row in requestedServicesTbl.rows">
+                      <td>{{row.data.baseService.name}}</td>
+                      <td>{{row.data.baseService.description}}</td>
+                      <td>{{row.data.baseService.createdAt}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+</div>

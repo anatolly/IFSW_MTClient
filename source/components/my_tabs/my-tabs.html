@@ -1,0 +1,11 @@
+<div class="tabbable">
+  <!--my-pane title="pane inside 'my-tabs' template">Text before List of panes - it's place where it should be</my-pane-->
+  <div style="float:left">
+  <ul class="nav nav-tabs">
+    <li ng-repeat="pane in panes" ng-class="{active:pane.selected}">
+      <a href="" ng-click="select(pane)">{{pane.title}}</a>
+    </li>
+  </ul>
+  </div>
+  <div class="tab-content" style="float:left; padding:0px 20px 20px 20px; background-color:#FFEEE;" ng-transclude></div>
+</div>

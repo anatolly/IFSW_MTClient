@@ -1,0 +1,7 @@
+ <my-tabs>
+  <my-pane ng-repeat="tab in mytabs" title="{{tab.title}}">
+    <div ng-include="tab.templateURL"></div>
+    <p>footer text</p>
+  </my-pane>
+  <p>tabs footer text</p>
+ </my-tabs>
