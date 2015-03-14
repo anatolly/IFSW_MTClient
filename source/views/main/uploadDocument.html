@@ -12,12 +12,14 @@
 		<input type="submit" value="Upload">
   </form-->
 
-  <input type="file" name="dicom_file" multiple="multiple" alt-file-model="myFile">
+  <input type="file" name="dicom_file" multiple="multiple" ng-model="myFile" alt-file-model="myFile">
 
   <br>
   <button class="btn btn-primary" ng-click="upload()">Upload Document</button>
 
   <br>
-  {{myFile.name}}
+  myFile: {{myFile}}
+  <br>
+  myFile.name: {{myFile.name}}
 
 </div>
