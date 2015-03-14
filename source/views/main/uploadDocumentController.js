@@ -59,7 +59,7 @@ angular.module('BMSClient.views.main.uploadDocumentController', ['myTabsModule',
             .error(func);
          */
          var xmlHttp=new XMLHttpRequest();
-         xmlHttp.open("POST", "http://localhost:1337/v1.0/DICOMEnvelope/upload", true);
+         xmlHttp.open("POST", "http://localhost:8080/cloudStorage/v1.0/DICOMEnvelope/upload", true);
          //xmlHttp.setRequestHeader("Content-type","multipart/form-data");
          var formData = new FormData();  
          formData.append("dicom_file", $scope.myFile);
